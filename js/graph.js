@@ -43,6 +43,7 @@ var getGraph = function(stationId, prediction) {
         .header("Content-Type", "application/x-www-form-urlencoded")
         .post("stationId=" + stationId + "&prediction="+prediction,
     //d3.json("data/test.json", function(data) {
+    //d3.json($.getJSON('https://tidesandcurrents.noaa.gov/api/datagetter',{ product: "water_level", date: "today", datum: "mtl", station: stationId, time_zone: "LST", units: "english", format: "json" }),
     function(error, data){
     console.log("vars are "+ stationId + prediction);
 

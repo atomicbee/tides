@@ -17,7 +17,7 @@
  <script src='https://d3js.org/d3.v4.min.js'></script>
 
  <body>
-     <h1>Tide Predicitons</h1>
+     <h1>Tide Predictions</h1>
  <div id="map"></div>
  <div class='graph' id='graphId'></div>
  <script src='js/graph.js'></script>

@@ -1,0 +1,22 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },                                                                              
+"features": [
+{ "type": "Feature", "properties": { "Name": "Bolinas Lagoon", "id": "9414958", "latitude": "37.908", "longitude": "-122.6785", "predictions": "Harmonic" }, "geometry": { "type": "Point", "coordinates": [ -122.6785, 37.908 ] } },
+{ "type": "Feature", "properties": { "Name": "Point Reyes", "id": "9415020", "latitude": "37.9961", "longitude": "-122.9767", "predictions": "Harmonic" }, "geometry": { "type": "Point", "coordinates": [ -122.9767, 37.9961 ] } },
+{ "type": "Feature", "properties": { "Name": "Tomales Bay entrance", "id": "9415469", "latitude": "38.2283", "longitude": "-122.977", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -122.977, 38.2283 ] } },
+{ "type": "Feature", "properties": { "Name": "Blakes Landing, Tomales Bay", "id": "9415396", "latitude": "38.19", "longitude": "-122.917", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -122.917, 38.19 ] } },
+{ "type": "Feature", "properties": { "Name": "Marshall, Tomales Bay", "id": "9415339", "latitude": "38.1617", "longitude": "-122.893", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -122.893, 38.1617 ] } },
+{ "type": "Feature", "properties": { "Name": "Reynolds, Tomales Bay", "id": "9415320", "latitude": "38.1467", "longitude": "-122.883", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -122.883, 38.1467 ] } },
+{ "type": "Feature", "properties": { "Name": "Inverness, Tomales Bay", "id": "9415228", "latitude": "38.1133", "longitude": "-122.868", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -122.868, 38.1133 ] } },
+{ "type": "Feature", "properties": { "Name": "Bodega Harbor entrance", "id": "9415625", "latitude": "38.3083", "longitude": "-123.055", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -123.055, 38.3083 ] } },
+{ "type": "Feature", "properties": { "Name": "Fort Ross", "id": "9416024", "latitude": "38.5133", "longitude": "-123.245", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -123.245, 38.5133 ] } },
+{ "type": "Feature", "properties": { "Name": "Green Cove", "id": "9416409", "latitude": "38.7043", "longitude": "-123.4494", "predictions": "Harmonic" }, "geometry": { "type": "Point", "coordinates": [ -123.4494, 38.7043 ] } },
+{ "type": "Feature", "properties": { "Name": "ARENA COVE", "id": "9416841", "latitude": "38.9133", "longitude": "-123.708", "predictions": "Harmonic" }, "geometry": { "type": "Point", "coordinates": [ -123.708, 38.9133 ] } },
+{ "type": "Feature", "properties": { "Name": "Point Arena", "id": "TWC0771", "latitude": "38.95", "longitude": "-123.7333", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -123.7333, 38.95 ] } },
+{ "type": "Feature", "properties": { "Name": "NOYO HARBOR", "id": "9417426", "latitude": "39.4258", "longitude": "-123.8051", "predictions": "Harmonic" }, "geometry": { "type": "Point", "coordinates": [ -123.8051, 39.4258 ] } },
+{ "type": "Feature", "properties": { "Name": "Mendocino, Mendocino Bay", "id": "TWC0777", "latitude": "39.3", "longitude": "-123.8", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -123.8, 39.3 ] } },
+{ "type": "Feature", "properties": { "Name": "Westport", "id": "9417624", "latitude": "39.6333", "longitude": "-123.783", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -123.783, 39.6333 ] } },
+{ "type": "Feature", "properties": { "Name": "Shelter Cove", "id": "9418024", "latitude": "40.025", "longitude": "-124.058", "predictions": "Subordinate" }, "geometry": { "type": "Point", "coordinates": [ -124.058, 40.025 ] } }
+]
+}

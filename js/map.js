@@ -54,8 +54,10 @@ markerLayer.on("click", function (event) {
     console.log(properties.predictions);
     console.log(properties);
     if (properties.predictions == "Harmonic") {
+        clearTable();
         getGraph(properties.id, properties.predictions);
         getWindTable(properties.id);
+        getTemp(properties.id);
 
     }
     // do some stuff…

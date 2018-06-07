@@ -25,9 +25,9 @@
 
  <div class='graph' id='graphId'> <script src='js/graph.js'></script></div>
 
- <!--<div class='wind' id='windId'><script src='js/wind.js'></script></div>-->
+ <div class='temp' id='tempId'></script><script src='js/temp.js'></script></div>
 
- <div id='funding-table' class='g-graphic'> <script src='./js/windTable.js'></script> <div class='g-table'>
+ <div id='windTable' class='g-graphic'> <script src='./js/windTable.js'></script> <div class='g-table'>
      <div class='g-table-head'>
          <div class='g-table-caption'>Table </div>
          <div class='g-table-row'>

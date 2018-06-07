@@ -130,7 +130,9 @@ function getWindTable(station) {
 
             });
 
+}
 
 
-
+function clearTable() {
+    d3.select(".g-table-body-time").text("");
 }

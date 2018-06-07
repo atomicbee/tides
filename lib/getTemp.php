@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['stationId'])) {
-    $stationId = ($_GET['stationId']);
+if (isset($_POST['stationId'])) {
+    $stationId = ($_POST['stationId']);
 }
 
 

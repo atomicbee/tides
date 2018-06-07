@@ -9,7 +9,7 @@ var margin = {
 var width = wt - margin.left - margin.right;
 var height = ht - margin.top - margin.bottom;
 
-var svg = d3.select("#graphId").append("svg")
+var svg = d3.select("#windId").append("svg")
     .attr("width", wt)
     .attr("height", ht);
 g = svg.append("g")
@@ -38,27 +38,28 @@ g.append("rect")
 //    .attr("transform", "translate(" + -margin.left + "," + -margin.top + ")");
 
 
-var getGraph = function (stationId, prediction) {
+var getWind = function (stationId) {
     //cleanup if needed
     d3.selectAll('.axis').remove();
     d3.selectAll('.line').remove();
 
-    d3.json('lib/getTides.php')
+    d3.json('lib/getWind.php')
         .header("Content-Type", "application/x-www-form-urlencoded")
-        .post("stationId=" + stationId + "&prediction=" + prediction,
+        .post("stationId=" + stationId,
             function (error, data) {
 
-                data.predictions.forEach(function (d) {
+                data.data.forEach(function (d) {
                     d.time = parseTime(d.t);
-                    d.value = +d.v;
-                    d.name = d.name;
+                    d.value = +d.s;
+                    d.direction = d.dr;
+                    console.log("data is " + d.time + " " + d.value + " " + d.direction);
 
                 });
 
-                x.domain(d3.extent(data.predictions, function (d) {
+                x.domain(d3.extent(data.data, function (d) {
                     return d.time;
                 }));
-                y.domain(d3.extent(data.predictions, function (d) {
+                y.domain(d3.extent(data.data, function (d) {
                     return d.value;
                 }));
 
@@ -76,10 +77,10 @@ var getGraph = function (stationId, prediction) {
                     .attr("y", 6)
                     .attr("dy", "0.8em")
                     .style("text-anchor", "end")
-                    .text("feet");
+                    .text("speed");
 
                 g.append("path")
-                    .datum(data.predictions)
+                    .datum(data.data)
                     .attr("class", "line")
                     .attr("d", line);
 

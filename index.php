@@ -18,9 +18,41 @@
 
  <body>
      <h1>Tide Predictions</h1>
+     <div class="container-fluid">
+
+       <div class="container">
  <div id="map"></div>
- <div class='graph' id='graphId'></div>
- <script src='js/graph.js'></script>
+
+ <div class='graph' id='graphId'> <script src='js/graph.js'></script></div>
+
+ <!--<div class='wind' id='windId'><script src='js/wind.js'></script></div>-->
+
+ <div id='funding-table' class='g-graphic'> <script src='./js/windTable.js'></script> <div class='g-table'>
+     <div class='g-table-head'>
+         <div class='g-table-caption'>Table </div>
+         <div class='g-table-row'>
+
+         <div data-key='Time' class='g-table-cell g-table-cell-time'>
+             <div class='g-table-column-sort' >Time</div>
+         </div>
+
+         <div data-key='Direction' class='g-table-cell'>
+             <div class='g-table-column-sort'>Speed</div>
+         </div>
+
+         <div data-key='Speed' class='g-table-cell'>
+             <div class='g-table-column-sort'>Direction</div>
+     </div>
+ </div>
+</div>
+ <div class='g-table-body g-table-body-time'></div>
+ </div>
+</div>
+
+
+</div>
+</div>
+
  </body>
  <script src="js/stations.js"></script>
  <script src="js/map.js"></script>

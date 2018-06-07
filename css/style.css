@@ -1,12 +1,18 @@
 #map {
-    height: 880px;
+    height: 50em;
     width: 50%;
     float: right;
 }
 .graph {
-    position: absolute;;
+    position: relative;;
     z-index: 2000;
-    
+
+}
+
+.wind {
+    position: relative;;
+    z-index: 2001;
+
 }
 .axis--x path {
 }
@@ -25,4 +31,158 @@
 }
 h1 {
     font-family: sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: left;
+}
+
+
+/****************/
+.g-table {
+    top: 500;
+    margin: 6px 10px 20px 10px;
+    font: 11px/15px sans-serif;
+    -webkit-text-size-adjust: none;
+}
+
+.g-table-head {
+    font: 13px/17px sans-serif;
+    background-color: #efefef;
+    background: linear-gradient(to bottom,#fff 0,#e5e5e5 10%);
+}
+
+.g-table-head .g-table-cell {
+    height: 30px;
+    line-height: 3;
+    cursor: pointer;
+}
+
+.g-table-row:after {
+    display: block;
+    content: "";
+    clear: left;
+}
+
+.g-table-body {
+    margin-top: 6px;
+    position: relative;
+}
+
+.g-table-head,
+.g-table-body {
+    padding-bottom: 6px;
+    padding-top: 5px;
+    padding-left: 3px;
+    border-bottom: solid 1px #ccc;
+}
+
+.g-table-body .g-table-row {
+    position: absolute;
+    width: 100%;
+}
+.g-table-caption {caption-side: top;  text-align: center;  width: 100%; font-weight: bold;}
+
+.g-table-cell {
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.g-table-bar,
+.g-table-label {
+    -webkit-transition: width .5s ease;
+    -moz-transition: width .5s ease;
+    -ms-transition: width .5s ease;
+    -o-transition: width .5s ease;
+    transition: width .5s ease;
+}
+
+.g-table-body .g-table-cell {
+    height: 19px;
+    line-height: 19px;
+}
+
+.g-table-body .g-table-row {
+    -webkit-transition: top .5s ease;
+    -moz-transition: top .5s ease;
+    -ms-transition: top .5s ease;
+    -o-transition: top .5s ease;
+    transition: top .5s ease;
+}
+
+.g-table-bar {
+    position: absolute;
+    height: 100%;
+    background: rgba(120, 120, 120, .5);
+}
+
+.g-table-label {
+    position: absolute;
+    right: 6px;
+}
+
+.g-table-cell-activity .g-table-label {
+    right: -4px;
+    width: 0;
+    color: #000;
+}
+
+.g-table-body .g-table-row:hover .g-table-bar {
+    height: 18px;
+    border-bottom: solid 1px rgba(0, 0, 0, .4);
+}
+
+.g-table-body .g-table-row:hover,
+.g-table-body .g-table-row:hover .g-table-cell-time,
+.g-table-body .g-table-row:hover .g-table-label,
+.g-table-body-average,
+.g-table-body-average .g-table-label {
+    font-weight: bold;
+    color: #000;
+    background-color: #f6de76;
+}
+
+.g-table-body:not(:last-of-type) {
+    border-bottom: dashed 1px #ccc;
+}
+
+.g-table-column-sort-ascending:after,
+.g-table-column-sort-descending:after {
+    padding-left: 4px;
+}
+
+.g-table-column-sort-ascending:after {
+    content: "\0025B2";
+    color: #666;
+}
+
+.g-table-column-sort-descending:after {
+    content: "\0025BC";
+    color: #666;
+}
+
+
+.g-table-cell {
+    width: 230px;
+}
+
+.g-table-cell-time {
+    font-size: 12px;
+    font-weight: bold;
+    width: 230px;
+}
+
+.g-table-cell-activity {
+    width: 230px;
+    border-bottom: dashed 1px #ccc;
+
+}
+
+.g-table-cell-activity .g-table-bar {
+    background: rgba(185, 185, 185, .5);
 }

@@ -1,7 +1,5 @@
-
 var base1 = L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3NodXN0ZXJtYW4iLCJhIjoianF6b3FzWSJ9.D8-79Fb73kS6xXRN5h630g', {
-    attribution: 'MapBox',
-    maxZoom: 18
+    attribution: 'MapBox'
 });
 
 var base2 = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -14,7 +12,7 @@ var baseMaps = {
     "osm": base2
 };
 
-var map = L.map('map').setView([-122.6785, 37.908], 9).addLayer(base2);
+var map = L.map('map').setView([-122.3818588256836, 37.92795083988293], 11).addLayer(base2);
 /*map controls*/
 L.control.layers(baseMaps).addTo(map);
 
@@ -45,7 +43,7 @@ markerLayer = L.geoJson(stationData, {
 
     onEachFeature: onEachFeature,
 
-    pointToLayer: function(feature, latlng) {
+    pointToLayer: function (feature, latlng) {
         return L.marker(latlng);
     }
 }).addTo(map);
@@ -55,8 +53,9 @@ markerLayer.on("click", function (event) {
     console.log(properties);
     console.log(properties.predictions);
     console.log(properties);
-    if (properties.predictions == "Harmonic"){
+    if (properties.predictions == "Harmonic") {
         getGraph(properties.id, properties.predictions);
+        getWindTable(properties.id);
 
     }
     // do some stuff…
@@ -64,6 +63,6 @@ markerLayer.on("click", function (event) {
 /*map*/
 
 map.fitBounds([
-    [41.599013054830216, -111.7529296875],
-    [33.970697997361626, -127.869873046875]
+    [38.312568460056966, -121.94137573242186],
+    [37.6631679243197, -122.85186767578125]
 ]);

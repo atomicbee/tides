@@ -3,8 +3,8 @@ if (isset($_POST['stationId'])) {
     $stationId = ($_POST['stationId']);
 }
 
-$startDate = date("Ymd");
-$endDate = date("Ymd", strtotime("+1 day"));
+$startDate = (string)date("Ymd");
+$endDate = (string)date("Ymd", strtotime("+1 day"));
 
 
 $arrContextOptions=array(
@@ -16,7 +16,7 @@ $arrContextOptions=array(
 );
 
 $windData = file_get_contents(
-      'https://tidesandcurrents.noaa.gov/api/datagetter?product=wind&begin_date=20180605&end_date=20180606&station='.$stationId.'&time_zone=lst_ldt&units=english&interval=6&format=json'
+      'https://tidesandcurrents.noaa.gov/api/datagetter?product=wind&begin_date='.$startDate.'&end_date='.$endDate.'&station='.$stationId.'&time_zone=lst_ldt&units=english&interval=h&format=json'
  );
 
 $wind = json_decode($windData, true);

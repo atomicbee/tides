@@ -18,9 +18,17 @@
 
  <body>
      <h1>Tide Predictions</h1>
+     <div class="container-fluid">
+
+       <div class="container">
  <div id="map"></div>
- <div class='graph' id='graphId'></div>
- <script src='js/graph.js'></script>
+
+ <div class='graph' id='graphId'> <script src='js/graph.js'></script></div>
+
+ <div class='wind' id='windId'><script src='js/wind.js'></script></div>
+</div>
+</div>
+
  </body>
  <script src="js/stations.js"></script>
  <script src="js/map.js"></script>

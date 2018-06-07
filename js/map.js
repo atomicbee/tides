@@ -1,4 +1,3 @@
-
 var base1 = L.tileLayer('http://api.tiles.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ3NodXN0ZXJtYW4iLCJhIjoianF6b3FzWSJ9.D8-79Fb73kS6xXRN5h630g', {
     attribution: 'MapBox',
     maxZoom: 18
@@ -45,7 +44,7 @@ markerLayer = L.geoJson(stationData, {
 
     onEachFeature: onEachFeature,
 
-    pointToLayer: function(feature, latlng) {
+    pointToLayer: function (feature, latlng) {
         return L.marker(latlng);
     }
 }).addTo(map);
@@ -55,8 +54,9 @@ markerLayer.on("click", function (event) {
     console.log(properties);
     console.log(properties.predictions);
     console.log(properties);
-    if (properties.predictions == "Harmonic"){
+    if (properties.predictions == "Harmonic") {
         getGraph(properties.id, properties.predictions);
+        getWind(properties.id);
 
     }
     // do some stuff…

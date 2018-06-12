@@ -3,7 +3,7 @@ function getWindTable(station) {
     var rowHeight = 20;
     var columns = ["Speed", "Direction"];
     var sortKey = "Time",
-        sortOrder = d3.ascending;
+        sortOrder = d3.descending;
     var formatNumber = d3.format(",.0f"),
         formatDate = d3.timeFormat("%m/%d/%Y %H:%M ");
     var x = d3.scaleLinear()
@@ -21,9 +21,14 @@ function getWindTable(station) {
                     d.time = parseTime(d.t);
                     d.speed = +d.s;
                     d.direction = d.dr;
-                    console.log("data is " + d.time + " " + d.value + " " + d.direction);
+                    //console.log("data is " + d.time + " " + d.value + " " + d.direction);
 
                 });
+
+                data.data.sort(function (a, b) {
+                    return b.time - a.time;
+                });
+
 
 
                 var timeRow = d3.select(".g-table-body-time")
@@ -89,16 +94,16 @@ function getWindTable(station) {
                     })
                     .on("click", clicked)
                     .select(".g-table-column-sort")
-                    .classed("g-table-column-sort-" + (sortOrder === d3.ascending ? "ascending" : "descending"), function (d) {
+                    .classed("g-table-column-sort-" + (sortOrder === d3.descending ? "descending" : "ascending"), function (d) {
                         return d === sortKey;
                     });
 
                 function clicked(key) {
                     d3.event.preventDefault();
 
-                    columnLabel.classed("g-table-column-sort-" + (sortOrder === d3.ascending ? "ascending" : "descending"), false);
+                    columnLabel.classed("g-table-column-sort-" + (sortOrder === d3.descending ? "descending" : "ascending"), false);
 
-                    if (sortKey === key) sortOrder = sortOrder === d3.ascending ? d3.descending : d3.ascending;
+                    if (sortKey === key) sortOrder = sortOrder === d3.descending ? d3.ascending : d3.descending;
                     else sortKey = key;
 
                     if (key === "Time") {
@@ -110,7 +115,7 @@ function getWindTable(station) {
 
                     }
 
-                    columnLabel.classed("g-table-column-sort-" + (sortOrder === d3.ascending ? "ascending" : "descending"), function (d) {
+                    columnLabel.classed("g-table-column-sort-" + (sortOrder === d3.descending ? "descending" : "ascending"), function (d) {
                         //console.log(" d is " + d);
                         return d === key;
                     });
@@ -126,9 +131,8 @@ function getWindTable(station) {
 
                 }
 
-
-
             });
+
 
 }
 

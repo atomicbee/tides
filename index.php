@@ -21,11 +21,12 @@
      <div class="container-fluid">
 
        <div class="container">
- <div id="map"></div>
-
- <div class='graph' id='graphId'> <script src='js/graph.js'></script></div>
+ <div id="map"> <script src="js/stations.js"></script>
+  <script src="js/map.js"></script></div>
 
  <div class='temp' id='tempId'></script><script src='js/temp.js'></script></div>
+
+ <div class='graph' id='graphId'> <script src='js/graph.js'></script></div>
 
  <div id='windTable' class='g-graphic'> <script src='./js/windTable.js'></script> <div class='g-table'>
      <div class='g-table-head'>
@@ -49,13 +50,12 @@
  </div>
 </div>
 
-
 </div>
+
 </div>
 
  </body>
- <script src="js/stations.js"></script>
- <script src="js/map.js"></script>
+
 
 
 

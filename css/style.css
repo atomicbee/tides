@@ -1,3 +1,8 @@
+html {
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
 #map {
     height: 50em;
     width: 50%;
@@ -15,6 +20,7 @@
 
 }
 .axis--x path {
+    stroke: #000;
 }
 .axis--x line {
   stroke: #777;
@@ -34,7 +40,7 @@ h1 {
 }
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     flex: 1 1 auto;
     align-items: center;
@@ -192,5 +198,48 @@ h1 {
 }
 
 .temp{
-    
+
+}
+
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 210px;
+  padding: 2px;
+  font: 12px sans-serif;
+  color: white;
+  background: black;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+.focus line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.5px;
+  stroke-dasharray: 3 3;
+}
+
+.cold {
+    color: green;
+}
+.vcold {
+    color: blue;
+}
+.moderate {
+    color: orange;
+}
+.warm {
+    color: red;
 }

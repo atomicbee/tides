@@ -1,9 +1,9 @@
-var wt = 500;
-var ht = 300;
+var wt = 700;
+var ht = 460;
 var margin = {
-    top: 20,
-    right: 20,
-    bottom: 40,
+    top: 80,
+    right: 120,
+    bottom: 60,
     left: 40
 };
 var width = wt - margin.left - margin.right;
@@ -16,6 +16,12 @@ g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var parseTime = d3.timeParse("%Y-%m-%d %H:%M");
+var shortTime = d3.timeFormat("%H:%M");
+
+var bisectDate = d3.bisector(function (d) {
+    return d.time;
+}).left;
+
 
 var x = d3.scaleTime()
     .rangeRound([0, width]);
@@ -78,10 +84,66 @@ var getGraph = function (stationId, prediction) {
                     .style("text-anchor", "end")
                     .text("feet");
 
+                var focus = g.append("g")
+                    .attr("class", "focus")
+                    .style("display", "none");
+
+                focus.append('line')
+                    .classed('x', true);
+
+                focus.append('line')
+                    .classed('y', true);
+
+
+                focus.append("circle")
+                    .attr("r", 7.5);
+
+                focus.append("text")
+                    .attr("x", 15)
+                    .attr("dy", ".31em");
+
                 g.append("path")
                     .datum(data.predictions)
                     .attr("class", "line")
                     .attr("d", line);
+
+                g.append("rect")
+                    .attr("class", "overlay")
+                    .attr("width", width)
+                    .attr("height", height)
+                    .on("mouseover", function () {
+                        focus.style("display", null);
+                    })
+                    .on("mouseout", function () {
+                        focus.style("display", "none");
+                    })
+                    .on("mousemove", mousemove);
+
+
+                function mousemove() {
+                    var x0 = x.invert(d3.mouse(this)[0]),
+                        i = bisectDate(data.predictions, x0, 1),
+                        d0 = data.predictions[i - 1],
+                        d1 = data.predictions[i],
+                        d = x0 - d0.time > d1.time - x0 ? d1 : d0;
+                    focus.attr("transform", "translate(" + x(d.time) + "," + y(d.value) + ")");
+
+                    focus.select('line.x')
+                        .attr('x1', 0)
+                        .attr('x2', -x(d.time))
+                        .attr('y1', 0)
+                        .attr('y2', 0);
+
+                    focus.select('line.y')
+                        .attr('x1', 0)
+                        .attr('x2', 0)
+                        .attr('y1', 0)
+                        .attr('y2', height - y(d.value));
+
+                    focus.select("text").text(d.value.toFixed(1) + " feet at " + shortTime(d.time));
+                }
+
+
 
             });
 };

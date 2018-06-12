@@ -50,9 +50,6 @@ markerLayer = L.geoJson(stationData, {
 
 markerLayer.on("click", function (event) {
     var properties = event.layer.feature.properties;
-    console.log(properties);
-    console.log(properties.predictions);
-    console.log(properties);
     if (properties.predictions == "Harmonic") {
         clearTable();
         getGraph(properties.id, properties.predictions);

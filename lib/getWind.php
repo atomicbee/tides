@@ -3,8 +3,8 @@ if (isset($_POST['stationId'])) {
     $stationId = ($_POST['stationId']);
 }
 
-$startDate = (string)date("Ymd");
-$endDate = (string)date("Ymd", strtotime("+1 day"));
+$startDate = (string)date("Ymd", strtotime("-1 day"));
+$endDate = (string)date("Ymd");
 
 
 $arrContextOptions=array(

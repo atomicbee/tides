@@ -232,14 +232,23 @@ div.tooltip {
 }
 
 .cold {
+    padding: 1em;
     color: green;
 }
 .vcold {
+    padding: 1em;
     color: blue;
 }
 .moderate {
+    padding: 1em;
     color: orange;
 }
 .warm {
+    padding: 1em;
     color: red;
+}
+.note {
+    padding: 1em;
+    color: grey;
+    font-style: italic;
 }

@@ -5,8 +5,12 @@ function getTemp(stationId) {
         .header("Content-Type", "application/x-www-form-urlencoded")
         .post("stationId=" + stationId,
             function (error, data) {
-                temp = data.data[0].v;
-                console.log(temp);
+                if(!data.error){
+                    temp = data.data[0].v;
+                } else {
+                    temp = "no data";
+                }
+
 
                 d3.selectAll("#tempId")
                     .data(temp)
@@ -18,12 +22,19 @@ function getTemp(stationId) {
                             style = "cold";
                         } else if ((temp > 60) && (temp < 75)) {
                             style = "moderate";
-                        } else {
+                        } else if (temp > 75){
                             style = "warm";
+                        }else if (temp === "no data"){
+                            style = "note";
                         }
                         return style;
                     })
-                    .text(temp + " degrees F");
+                    .text(function(){
+                     if(temp !== "no data"){
+                        return (temp + " degrees F");
+                     }else{
+                         return "no temperature sensor at this location";
+                     }});
             });
 
 }

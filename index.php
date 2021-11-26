@@ -11,6 +11,9 @@
 
  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
  <link rel="stylesheet" href="css/style.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -21,6 +24,8 @@
      <div class="container-fluid">
 
        <div class="container">
+         <p>Select a station on the map to view the available data.</p>
+         <p> <a href="#tempId">Temperature</a> | <a href="#graphId">Tides</a> | <a href="#windTable">Wind</a></p>
  <div id="map"> <script src="js/stations.js"></script>
   <script src="js/map.js"></script></div>
 
@@ -30,7 +35,7 @@
 
  <div id='windTable' class='g-graphic'> <script src='./js/windTable.js'></script> <div class='g-table'>
      <div class='g-table-head'>
-         <div class='g-table-caption'>Table </div>
+         <div class='g-table-caption'>Wind speed and direction over the last 48 Hours (if available)</div>
          <div class='g-table-row'>
 
          <div data-key='Time' class='g-table-cell g-table-cell-time'>

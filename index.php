@@ -9,13 +9,13 @@
 
 </head>
 
- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+ <link rel="stylesheet" href="leaflet/leaflet.css" />
  <link rel="stylesheet" href="css/style.css" />
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
- <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+ <script src="leaflet/leaflet.js"></script>
  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
  <script src='https://d3js.org/d3.v4.min.js'></script>
 
